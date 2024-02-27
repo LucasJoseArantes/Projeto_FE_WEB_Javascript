@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 01 - Projeto FE Web JavaScript</title>
+</head>
+<body>
+    <p> Insira uma idade: <input type="text" id="age"> <input type="submit" id="verify"> </p>
+
+
+    <script>
+        
+        sumAges = (vet) => {
+            let sum = 0; // Corrigido: Declarando sum como uma variável local
+            for (let i = 0; i < vet.length; i++) sum += vet[i];            
+            return sum;
+        }
+
+        avgAges = (vet) => {
+            return sumAges(vet) / vet.length;
+        };
+        
+        biggestAge = (vet) => {
+            let maior = vet[0]; // Corrigido: Declarando maior como uma variável local
+            for (let i = 1; i < vet.length; i++) 
+                if (vet[i] > maior) maior = vet[i];
+                return maior;
+            };
+
+            
+            oddAges = (vet) => {
+                return vet.filter((age) => age % 2 !== 0);
+        };
+        
+        overEighteen = (vet) => {
+            let ageOverEighteen =  vet.filter((age) => age >= 18); // Corrigido: Declarando ageOverEighteen como uma variável local
+
+            if (ageOverEighteen.length === vet.length) return true;
+            else return false;
+        };
+
+        
+        verifyAge = (vet, inputAge) => {
+            for(let i = 0; i < vet.length; i++) {
+                if(vet[i] <= inputAge) return 'EXISTEM NÚMEROS MENORES/IGUAIS QUE O INFORMADO';
+                else return 'OS NUMEROS SÃO MAIORES QUE O INFORMADO';
+            }
+        };
+        
+        showBiggerAges = (vet) => {
+            return vet.filter((age) => age >= inputAge);
+        };
+
+        avgBiggerAges = (vet, inputAge) => {
+            for(let i = 0; i < vet.length; i++) {
+                if(vet[i] >= inputAge) {
+                    let biggerAges = vet.filter((age) => age >= inputAge);
+                    return sumAges(biggerAges) / biggerAges.length;
+                }
+
+                else return 'NÃO EXISTEM IDADES MAIORES QUE A INFORMADA';
+            }
+        }
+        
+
+        document.getElementById('verify').addEventListener('click', function(){
+            inputAge = parseInt(document.getElementById('age').value); 
+            vetAges = [10, 21, 31, 40];
+            document.write(`
+                <b> a) A média aritmética simples das idades </b>
+                <p>Soma das idades: ${sumAges(vetAges)}</p>
+                    
+                <b> a) A média aritmética simples das idades </b>
+                <p>Média das idades: ${avgAges(vetAges)}</p>
+                
+                <b> b) A maior idade </b>
+                <p>Maior idade: ${biggestAge(vetAges)}</p>
+                
+                <b> c) As idades ímparess </b>
+                <p>Idades ímpares: ${oddAges(vetAges)}</p>
+                
+                <b> d) Verificar se todos são maiores de idade </b>
+                <p>São todos maiores que 18? : ${overEighteen(vetAges)}</p>
+                
+                <b> e) Verificar se todas as idades são maiores ou iguais a um valor informado pelo usuário </b>
+                <p>São todas as idades maiores que a informada:  ${verifyAge(vetAges, inputAge)} </p>
+            
+                <b> f) Exibir todas as idades maiores ou iguais a determinada idade </b>
+                <p>Idades maiores/iguais que a informado: ${showBiggerAges(vetAges, inputAge)} </p>
+            
+                <b> g) A média das idades das pessoas com idades maiores ou iguais a determinada idade </b>
+                <p>Média das idades maiores que a informada: ${avgBiggerAges(vetAges, inputAge)}</p>
+            `);
+        });
+    </script>
+</body>
+</html>

@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Consulta de CEP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="">
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep">
+    <h1>Consulta de CEP</h1>
+    <div class="shadow-div">
+        <form>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep">
 
-        <label for="rua">Rua:</label>
-        <input type="text" id="rua" name="rua" disabled>
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" disabled>
 
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" disabled>
 
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" disabled>
-    </form>
+            <label for="bairro">Bairro: </label>
+            <input type="text" id="bairro" name="bairro" disabled>
+        </form>
+    </div>
     
     <script src="script01.js"></script>
 </body>

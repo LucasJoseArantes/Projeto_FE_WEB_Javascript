@@ -1,0 +1,7 @@
+[
+    {"nome":"Ana Maria", "notaBim1":43.5, "notaBim2":27.8,"sexo":"F"},
+    {"nome":"Antônio José", "notaBim1":30, "notaBim2":30,"sexo":"M"},
+    {"nome":"Carla Maria", "notaBim1":20, "notaBim2":30,"sexo":"F"},
+    {"nome":"Dilma Santana", "notaBim1":40, "notaBim2":50,"sexo":"F"},
+    {"nome":"Roberto Carlos", "notaBim1":15, "notaBim2":20,"sexo":"M"}
+]

@@ -59,18 +59,6 @@ footer {
     text-align: center;
 }
 
-.seletor-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    padding: 5px;
-    margin: auto;
-    max-width: 2000px;
-    background-color: white;
-}
-
 #box-filmes{
     display: flex;
     flex-direction: row;
@@ -100,7 +88,7 @@ footer {
 
 .filme-container:hover {
     transition: 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.0); 
+    background-color: rgba(0, 0, 0, 0.10); 
 }
 
 .filme-container:not(:hover){
@@ -149,13 +137,6 @@ footer {
     margin-bottom: 10px;
 }
 
-.filme-imagem{
-    max-width: 1300px;
-    max-height: 260px;
-    border-radius: 20%; 
-    overflow: hidden;
-}	
-
 .filme-imagem-box{
     height: 400px;
     padding: auto;
@@ -164,6 +145,13 @@ footer {
     overflow: hidden;
     
 }
+.filme-imagem{
+    max-width: 1300px;
+    max-height: 260px;
+    border-radius: 20%; 
+    overflow: hidden;
+}	
+
 
 .filme-titulo:hover, .filme-imagem:hover{
     scale: 1.25;
@@ -204,10 +192,17 @@ footer {
     max-width: 300px;
 }	
 
-.filme-nota{
+.filme-nota h3{
     color: blue;
     margin-top: 20px;
     font-size: 30px;
+}
+
+.filme-nota p{
+    color: blue;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .estrelas{

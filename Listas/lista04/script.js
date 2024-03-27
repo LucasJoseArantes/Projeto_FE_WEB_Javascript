@@ -69,10 +69,12 @@ window.addEventListener('load', () => { // Quando a página é carregada
       dataFilme.textContent = `Data de Lançamento: ${dataFormatada}`; // Define o texto com a data de lançamento formatada
       dataFilmeBox.appendChild(dataFilme); // Adiciona o p de data ao container de data
 
-      var notaFilme = document.createElement('p'); // Cria um elemento p para exibir a nota do filme
+      var notaFilme = document.createElement('div'); // Cria um elemento p para exibir a nota do filme
       notaFilme.classList.add('filme-nota'); // Adiciona uma classe 'filme-nota' ao p de nota
       var notaFormatada = filme.vote_average.toFixed(2); // Formata a nota do filme para duas casas decimais
-      notaFilme.textContent = `Nota: ${notaFormatada} `; // Define o texto com a nota do filme, arredondada para duas casas decimais
+      notaFilme.innerHTML = `<h3> Nota: ${notaFormatada} </h3><p> (Votos: ${filme.vote_count}) </p>`; // Define o texto com a nota do filme, arredondada para duas casas decimais
+
+   
 
       var estrelas = gerarEstrelas(notaFormatada);
 
@@ -122,7 +124,7 @@ window.addEventListener('load', () => { // Quando a página é carregada
     return estrelas;
   }
 
-  const geraResumo = () => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget nisi nec quam accumsan feugiat. Ut rutrum, nisi ac ultricies hendrerit, mi justo pulvinar leo, id ultricies nisi turpis nec purus. Sed vehicula est quis lorem vestibulum, vel porta velit rutrum.';
+  const geraResumo = () => 'Não há sinopse dispnível';
 
   const getGenres = (genreIds) => {
     var genreMap = {

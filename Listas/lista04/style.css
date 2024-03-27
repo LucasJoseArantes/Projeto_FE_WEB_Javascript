@@ -146,11 +146,11 @@ footer {
 }
 
 .filme-titulo {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .filme-imagem{
-    max-width: 1200px;
+    max-width: 1300px;
     max-height: 260px;
     border-radius: 20%; 
     overflow: hidden;
@@ -165,11 +165,12 @@ footer {
     
 }
 
-.filme-titulo:hover,
-.filme-imagem:hover {
+.filme-titulo:hover, .filme-imagem:hover{
     scale: 1.25;
     transition: 1s ease; 
 }
+
+
 
 .filme-imagem-box:hover {
     scale: 1.15;

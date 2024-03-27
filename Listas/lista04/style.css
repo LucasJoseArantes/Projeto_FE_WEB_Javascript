@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: black;
+    color:white ;
+    padding: 10px;
+    text-align: center;
+}
+
+.seletor-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    margin: auto;
+    max-width: 2000px;
+    background-color: white;
+}
+
+#box-filmes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 5px;
+    margin: auto;
+    max-width: 2000px;
+    background-color: white;
+}
+
+.filme-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    height: 650px;
+    max-width: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.filme-container:hover {
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.filme-container:not(:hover){
+    transition: 0.5s ease;
+    background-color: white;
+}
+
+.filme-rank{
+    position: relative;
+}
+
+.filme-rank > h1{
+    position: absolute; 
+    top: 0px;
+    left: -100px; 
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: yellow;
+    box-shadow: 0 0 10px #000;
+    
+}
+
+.filme-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}	
+
+.filme-resumo{
+    width: 370px;
+}	
+
+.filme-titulo {
+    margin-bottom: 30px;
+}
+
+.filme-imagem{
+    max-width: 400px;
+    height: 100%;
+    margin: 10px;
+    border-radius: 20%; 
+    overflow: hidden;
+}	
+
+
+.filme-titulo:hover,
+.filme-imagem:hover {
+    scale: 1.1;
+    transition: 1s ease; 
+}
+
+
+.filme-titulo, .filme-imagem{
+    cursor: pointer;
+}
+
+.filme-titulo:not(:hover), .filme-imagem:not(:hover){
+    transition: 0.5s ease;
+}
+
+.filme-data{
+    color: white;   
+    margin-top: 10px;
+    background-color: red;
+    
+}
+
+
+.filme-rank-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 100px;
+    max-width: 300px;
+}	
+
+.filme-nota{
+    color: blue;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.estrelas{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+}	
+
+.full-star{
+    background-image: url(img/fullStar.png);
+    
+}
+
+.empty-star{
+    background-image: url(img/emptyStar.png);
+    
+}
+
+.empty-star, .full-star{
+    background-size: cover;
+    width: 20px;
+    padding: 20px;
+    margin: 2px;
+}

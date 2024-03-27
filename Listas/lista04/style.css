@@ -15,6 +15,37 @@ header {
     text-align: center;
 }
 
+nav {
+    text-align: center;
+}	
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+nav ul li {
+    display: inline-block; /* Alterado para inline-block para exibir os itens lado a lado */
+    margin-right: 10px;
+    padding: 0px 10px;
+    
+}
+
+nav ul li a {
+    display: block;
+    font-size: 11px;
+    padding: 10px;
+    text-decoration: none;
+    color: red;
+}
+
+nav ul li a:hover {
+    background-color: #f5f5f5; /* Altere a cor de fundo quando o mouse estiver sobre o link */
+    border-radius: 10px;
+}
+
+
 footer {
     background-color: black;
     color:white ;

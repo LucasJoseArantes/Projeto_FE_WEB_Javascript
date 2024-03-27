@@ -9,23 +9,17 @@ window.addEventListener('load', () => { // Quando a página é carregada
     }
   };
 
-  document.getElementById('button').addEventListener('click', () => { 
-    const boxFilmes = document.getElementById('box-filmes'); // Obtém o elemento com o ID 'box-filmes'
-    boxFilmes.innerHTML = ''; // Limpa todo o conteúdo dentro do elemento 'box-filmes'
-
 
   fetch(`https://api.themoviedb.org/3/movie/popular?language=${language}r&page=1`, options)
     .then(response => response.json()) // Converte a resposta para JSON
     .then(response => exibirFilmes(response.results)) // Chama a função exibirFilmes passando os resultados como argumento
     .catch(err => console.error(err));
-  });
+
 
   function exibirFilmes(filmes) {
-    
-   
-    option = document.getElementById('seletor').value
 
-    filmes.slice(0, option).forEach((filme, index) => { // Itera sobre os 10 primeiros filmes
+
+    filmes.slice(0, 10).forEach((filme, index) => { // Itera sobre os 10 primeiros filmes
       var containerFilme = document.createElement('div'); // Cria um elemento div para conter as informações do filme
       containerFilme.classList.add('filme-container'); // Adiciona uma classe 'filme-container' ao container do filme
 

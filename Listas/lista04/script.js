@@ -26,8 +26,8 @@ window.addEventListener('load', () => { // Quando a página é carregada
       var containerInfo = document.createElement('div'); // Cria um elemento div para conter as informações do filme
       containerInfo.classList.add('filme-info'); // Adiciona uma classe 'filme-info' ao container de informações
 
-      var containerRank = document.createElement('div'); // Cria um elemento div para conter a posição do filme
-      containerRank.classList.add('filme-rank-container'); // Adiciona uma classe 'filme-rank-container' ao container de posição
+      var containerRanting = document.createElement('div'); // Cria um elemento div para conter a posição do filme
+      containerRanting.classList.add('filme-ranting-container'); // Adiciona uma classe 'filme-ranting-container' ao container de posição
 
       var boxFilmes = document.getElementById('box-filmes'); // Obtém o elemento com o ID 'box-filmes'
 
@@ -41,42 +41,53 @@ window.addEventListener('load', () => { // Quando a página é carregada
       tituloFilme.classList.add('filme-titulo'); // Adiciona uma classe 'filme-titulo' ao h2 de título
       tituloFilme.textContent = filme.title; // Define o texto com o título do filme
 
+      var imagemFilmeBox = document.createElement('div'); // Cria um elemento img para exibir a imagem do filme
+      imagemFilmeBox.classList.add('filme-imagem-box'); // Adiciona uma classe 'filme-imagem-box' ao container de imagem
       var imagemFilme = document.createElement('img'); // Cria um elemento img para exibir a imagem do filme
-      imagemFilme.classList.add('filme-imagem'); // Adiciona uma classe 'filme-imagem' ao elemento de imagem
       var urlImagem = `https://image.tmdb.org/t/p/w500`; // URL base para as imagens
       imagemFilme.setAttribute('src', urlImagem + filme.poster_path); // Define o atributo src com o URL da imagem do filme
+      imagemFilme.classList.add('filme-imagem'); // Adiciona uma classe 'filme-imagem' ao elemento de imagem
+      imagemFilmeBox.appendChild(imagemFilme); // Adiciona o elemento de imagem ao container de imagem
+
 
       var resumoFilme = document.createElement('p'); // Cria um elemento p para exibir o resumo do filme
       resumoFilme.classList.add('filme-resumo'); // Adiciona uma classe 'filme-resumo' ao p de resumo
-      if (filme.overview.trim() === '') resumoFilme.textContent = geraResumo();
-      else resumoFilme.textContent = filme.overview.substring(0, 300) + '...'; 
-
+      resumoFilme.textContent = (filme.overview.trim() === '') ? geraResumo() : (filme.overview.length > 288 ? filme.overview.substring(0, 288) + '...' : filme.overview);
       resumoFilme.classList.add('filme-resumo'); // Adiciona uma classe 'filme-resumo' ao p de resumo
 
+      var generosFilme = document.createElement('p'); // Cria um elemento p para exibir os gêneros do filme
+      generosFilme.classList.add('filme-generos'); // Adiciona uma classe 'filme-generos' ao p de gêneros
+      generosFilme.textContent = `Gêneros: ${getGenres(filme.genre_ids)}`; // Define o texto com os gêneros do filme
+
+      var dataFilmeBox = document.createElement('div'); // Cria um elemento div para conter a data de lançamento do filme
+      dataFilmeBox.classList.add('filme-data-box'); // Adiciona uma classe 'filme-data-box' ao container de data
       var dataFilme = document.createElement('p'); // Cria um elemento p para exibir a data de lançamento do filme
       dataFilme.classList.add('filme-data'); // Adiciona uma classe 'filme-data' ao p de data
       const partesData = filme.release_date.split("-"); // Divide a data de lançamento em partes
       const dataFormatada = partesData[2] + "/" + partesData[1] + "/" + partesData[0]; // Formata a data no formato dd/mm/yyyy
       dataFilme.textContent = `Data de Lançamento: ${dataFormatada}`; // Define o texto com a data de lançamento formatada
-
+      dataFilmeBox.appendChild(dataFilme); // Adiciona o p de data ao container de data
+      
       var notaFilme = document.createElement('p'); // Cria um elemento p para exibir a nota do filme
       notaFilme.classList.add('filme-nota'); // Adiciona uma classe 'filme-nota' ao p de nota
       var notaFormatada = filme.vote_average.toFixed(2); // Formata a nota do filme para duas casas decimais
       notaFilme.textContent = `Nota: ${notaFormatada} `; // Define o texto com a nota do filme, arredondada para duas casas decimais
-
+      
       var estrelas = gerarEstrelas(notaFormatada);
-
-      containerFilme.appendChild(filmeRankBox); // Adiciona o elemento de posição ao container do filme
-      containerFilme.appendChild(imagemFilme); // Adiciona o elemento de imagem ao container do filme
-      containerFilme.appendChild(containerInfo); // Adiciona o container de informações ao container do filme
-
-      containerRank.appendChild(notaFilme); // Adiciona o elemento de nota ao container do filme
-      containerRank.appendChild(estrelas); // Adiciona o elemento de estrelas ao container do filme
       
       containerInfo.appendChild(tituloFilme); // Adiciona o elemento de título ao container do filme
       containerInfo.appendChild(resumoFilme); // Adiciona o elemento de resumo ao container do filme
-      containerInfo.appendChild(dataFilme); // Adiciona o elemento de data ao container do filme
-      containerInfo.appendChild(containerRank); // Adiciona o container de nota e estrelas ao container do filme
+      containerInfo.appendChild(generosFilme); // Adiciona o elemento de gêneros ao container do filme
+     
+      containerFilme.appendChild(filmeRankBox); // Adiciona o elemento de posição ao container do filme
+      containerFilme.appendChild(imagemFilmeBox); // Adiciona o elemento de imagem ao container do filme
+      containerFilme.appendChild(containerInfo); // Adiciona o container de informações ao container do filme
+      containerFilme.appendChild(dataFilmeBox); // Adiciona o elemento de data ao container do filme
+      containerFilme.appendChild(containerRanting); // Adiciona o container de nota e estrelas ao container do filme
+      
+      containerRanting.appendChild(notaFilme); // Adiciona o elemento de nota ao container do filme
+      containerRanting.appendChild(estrelas); // Adiciona o elemento de estrelas ao container do filme
+      
 
       boxFilmes.appendChild(containerFilme); // Adiciona o container do filme ao elemento com o ID 'box-filmes'
 
@@ -113,6 +124,34 @@ window.addEventListener('load', () => { // Quando a página é carregada
 
   const geraResumo = () => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget nisi nec quam accumsan feugiat. Ut rutrum, nisi ac ultricies hendrerit, mi justo pulvinar leo, id ultricies nisi turpis nec purus. Sed vehicula est quis lorem vestibulum, vel porta velit rutrum.';
 
+  function getGenres(genreIds) {
+    var genreMap = {
+        28: 'Ação',
+        12: 'Aventura',
+        16: 'Animação',
+        35: 'Comédia',
+        80: 'Crime',
+        99: 'Documentário',
+        18: 'Drama',
+        10751: 'Família',
+        14: 'Fantasia',
+        36: 'História',
+        27: 'Terror',
+        10402: 'Música',
+        9648: 'Mistério',
+        10749: 'Romance',
+        878: 'Ficção Científica',
+        10770: 'Cinema TV',
+        53: 'Thriller',
+        10752: 'Guerra',
+        37: 'Faroeste'
+    };
 
+    var genres = genreIds.map(id => {
+        return genreMap[id];
+    });
+
+    return genres.join(', ');
+}
 
 });

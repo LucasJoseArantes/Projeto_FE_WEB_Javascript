@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@media screen and (max-width: 768px) {
+    nav ul li a {
+        font-size: 5px; 
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -94,7 +100,7 @@ footer {
 
 .filme-container:hover {
     transition: 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.05); 
+    background-color: rgba(0, 0, 0, 0.0); 
 }
 
 .filme-container:not(:hover){
@@ -122,52 +128,72 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 100%;
     align-items: center;
+    margin: 20px;
     justify-content: flex-start;
+    width: 380px;
+    height: 350px;
+
 }	
 
 .filme-resumo{
-    width: 370px;
-}	
+    font-size: 14px;
+}
+
+.filme-generos{
+    font-size: 12px;
+    margin-top: 20px;
+}
 
 .filme-titulo {
     margin-bottom: 30px;
 }
 
 .filme-imagem{
-    max-width: 400px;
-    height: 100%;
-    margin: 10px;
+    max-width: 1200px;
+    max-height: 260px;
     border-radius: 20%; 
     overflow: hidden;
 }	
 
+.filme-imagem-box{
+    height: 400px;
+    padding: auto;
+    margin: 10px;
+    border-radius: 20%; 
+    overflow: hidden;
+    
+}
 
 .filme-titulo:hover,
 .filme-imagem:hover {
-    scale: 1.1;
+    scale: 1.25;
     transition: 1s ease; 
 }
+
+.filme-imagem-box:hover {
+    scale: 1.15;
+    transition: 1s ease; 
+}	
 
 
 .filme-titulo, .filme-imagem{
     cursor: pointer;
 }
 
-.filme-titulo:not(:hover), .filme-imagem:not(:hover){
+.filme-titulo:not(:hover), .filme-imagem:not(:hover), .filme-imagem-box:not(:hover){
     transition: 0.5s ease;
+}	
+
+.filme-data-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.filme-data{
-    color: white;   
-    margin-top: 10px;
-    background-color: red;
-    
-}
 
 
-.filme-rank-container{
+.filme-ranting-container{
     display: flex;
     flex-direction: column;
     align-items: center;

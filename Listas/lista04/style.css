@@ -82,7 +82,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px white;
     height: 650px;
-    max-width: 500px;
+    max-width: 700px;
     border: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
@@ -113,24 +113,24 @@ footer {
 }
 
 .filme-info{
+    max-width: 350px;
     display: flex;
     flex-direction: column;
+    height: 150px;
     text-align: center;
     align-items: center;
-    margin: 20px;
-    justify-content: flex-start;
-    width: 380px;
-    height: 350px;
+    overflow: scroll;
+    margin-bottom: 15px;
 
 }	
 
 .filme-resumo{
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .filme-generos{
     font-size: 12px;
-    margin-top: 20px;
+    margin: 15px;
 }
 
 .filme-titulo {
@@ -138,32 +138,20 @@ footer {
 }
 
 .filme-imagem-box{
-    height: 400px;
-    padding: auto;
-    margin: 10px;
-    border-radius: 20%; 
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px; 
+    max-width: 300px;
+    height: 60% ;
     
 }
-.filme-imagem{
-    max-width: 1300px;
-    max-height: 260px;
-    border-radius: 20%; 
-    overflow: hidden;
-}	
 
 
 .filme-titulo:hover, .filme-imagem:hover{
-    scale: 1.25;
+    scale: 1.1;
     transition: 1s ease; 
 }
 
-
-
-.filme-imagem-box:hover {
-    scale: 1.15;
-    transition: 1s ease; 
-}	
 
 
 .filme-titulo, .filme-imagem{
@@ -195,7 +183,7 @@ footer {
 .filme-nota h3{
     color: blue;
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .filme-nota p{
@@ -210,6 +198,7 @@ footer {
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 10px;
 
 }	
 
@@ -225,7 +214,7 @@ footer {
 
 .empty-star, .full-star{
     background-size: cover;
-    width: 20px;
-    padding: 20px;
+    width: 5px;
+    padding: 10px;
     margin: 2px;
 }

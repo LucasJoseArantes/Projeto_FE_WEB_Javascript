@@ -16,7 +16,7 @@ window.addEventListener('load', () => { // Quando a página é carregada
     .catch(err => console.error(err));
 
 
-  function exibirFilmes(filmes) {
+  function exibirFilmes(fil mes) {
 
 
     filmes.slice(0, 10).forEach((filme, index) => { // Itera sobre os 10 primeiros filmes
@@ -46,6 +46,10 @@ window.addEventListener('load', () => { // Quando a página é carregada
       var imagemFilme = document.createElement('img'); // Cria um elemento img para exibir a imagem do filme
       var urlImagem = `https://image.tmdb.org/t/p/w500`; // URL base para as imagens
       var urlImgFilme = urlImagem + filme.poster_path
+
+      imagemFilmeBox.setAttribute('style', `background-image: url(${urlImgFilme}) , background-size: cover`); // Define o atributo src com o URL da imagem do filme
+
+
       imagemFilme.setAttribute('src', urlImgFilme); // Define o atributo src com o URL da imagem do filme
       imagemFilme.classList.add('filme-imagem'); // Adiciona uma classe 'filme-imagem' ao elemento de imagem
       imagemFilmeBox.appendChild(imagemFilme); // Adiciona o elemento de imagem ao container de imagem
@@ -53,7 +57,7 @@ window.addEventListener('load', () => { // Quando a página é carregada
 
       var resumoFilme = document.createElement('p'); // Cria um elemento p para exibir o resumo do filme
       resumoFilme.classList.add('filme-resumo'); // Adiciona uma classe 'filme-resumo' ao p de resumo
-      resumoFilme.textContent = (filme.overview.trim() === '') ? geraResumo() : (filme.overview.length > 288 ? filme.overview.substring(0, 288) + '...' : filme.overview);
+      resumoFilme.textContent = (filme.overview.trim() === '') ? geraResumo() : (filme.overview.length > 500 ? filme.overview.substring(0, 500) + '...' : filme.overview);
       resumoFilme.classList.add('filme-resumo'); // Adiciona uma classe 'filme-resumo' ao p de resumo
 
       var generosFilme = document.createElement('p'); // Cria um elemento p para exibir os gêneros do filme
@@ -80,13 +84,13 @@ window.addEventListener('load', () => { // Quando a página é carregada
 
       containerInfo.appendChild(tituloFilme); // Adiciona o elemento de título ao container do filme
       containerInfo.appendChild(resumoFilme); // Adiciona o elemento de resumo ao container do filme
-      containerInfo.appendChild(generosFilme); // Adiciona o elemento de gêneros ao container do filme
 
       containerFilme.appendChild(filmeRankBox); // Adiciona o elemento de posição ao container do filme
       containerFilme.appendChild(imagemFilmeBox); // Adiciona o elemento de imagem ao container do filme
+      containerFilme.appendChild(containerRanting); // Adiciona o container de nota e estrelas ao container do filme
+      containerFilme.appendChild(generosFilme); // Adiciona o elemento de gêneros ao container do filme
       containerFilme.appendChild(containerInfo); // Adiciona o container de informações ao container do filme
       containerFilme.appendChild(dataFilmeBox); // Adiciona o elemento de data ao container do filme
-      containerFilme.appendChild(containerRanting); // Adiciona o container de nota e estrelas ao container do filme
 
       containerRanting.appendChild(notaFilme); // Adiciona o elemento de nota ao container do filme
       containerRanting.appendChild(estrelas); // Adiciona o elemento de estrelas ao container do filme

@@ -16,7 +16,7 @@ window.addEventListener('load', () => { // Quando a página é carregada
     .catch(err => console.error(err));
 
 
-  function exibirFilmes(filmes) {
+  function exibirFilmes(fil mes) {
 
 
     filmes.slice(0, 10).forEach((filme, index) => { // Itera sobre os 10 primeiros filmes

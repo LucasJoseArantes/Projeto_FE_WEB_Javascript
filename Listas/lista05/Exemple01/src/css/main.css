@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-container {
+    height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content-section{
+    max-width: 1400px;
+    text-align: center;
+
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    
+    
+}
+
+/* Title styles */
+.content-container > h2 {
+    margin-bottom: 15px;
+    color: rgb(1, 1, 69);
+    font-weight: 500;
+}
+
+
+.highlighted-component {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.content-container p {
+    color: #2a2a2a; ;
+    font-weight: 500;
+}
+
+
+.box {
+    display: flex;
+    height: 130px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.025);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    
+}
+
+.box:hover {
+    background-color: #bbd4fe;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles inside the box */
+.box h3 {
+    color: #010145;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;    
+}
+
+.round-button {
+    border-radius: 30px; 
+    padding: 10px 20px; 
+    background-color: white; 
+    color: #007BFF; 
+    border: 2px solid #007BFF; 
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px; 
+}

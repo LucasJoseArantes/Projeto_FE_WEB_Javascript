@@ -1,5 +1,5 @@
 {
-  "homepage":"https://LucasJoseArantes.github.io/Projeto_FE_WEB_Javascript/Listas/lista05/Exemple01/index.html",
+  "homepage": "https://LucasJoseArantes.github.io/Projeto_FE_WEB_Javascript/Listas/lista05/Exemple01",
   "name": "Lista 05",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-	"predeploy":"npm run build",
-	"deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",

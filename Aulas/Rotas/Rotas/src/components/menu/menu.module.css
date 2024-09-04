@@ -1,0 +1,11 @@
+nav{
+    background-color: rgb(240, 226, 226);
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}

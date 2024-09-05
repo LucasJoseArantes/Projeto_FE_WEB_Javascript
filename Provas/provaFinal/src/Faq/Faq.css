@@ -1,0 +1,51 @@
+.faqSection {
+    padding: 40px;
+    background-color: rgb(201, 201, 201);
+    max-width: 800px;
+    margin: auto;
+}
+
+.faqSection h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.faqList {
+    list-style: none;
+    padding: 0;
+}
+
+.faqItem {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faqItem:hover {
+    background-color: #f9f9f9;
+}
+
+.faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.faqIcon {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.faqAnswer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #555;
+}

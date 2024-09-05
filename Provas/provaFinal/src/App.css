@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+}
+
+.mainContainer {
+    width: 1200px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer section{
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+section:nth-child(odd) {
+    background-color: #d9e7ff;
+}
+
+section:nth-child(even) {
+    background-color: #ffd7ff;
+}
+
+section:last-child {
+    background-color: rgb(201,201,201);
+}
+
+.PortSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}
+
+.PortContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px 10px 60px;
+}
+
+.button {
+    background-color: #2c70a5;
+    color: white;
+    padding: 20px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 190px;
+    margin: 60px 10px;
+}
+
+.button:hover {
+    background-color: #245b83;
+}

@@ -1,0 +1,19 @@
+.ImageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    text-align: center;
+    width: 1500px;
+    padding: 20px;
+}
+
+.ImageContainer img{
+    width: 120%;
+    height: 100%;
+}
+
+.ImageContainer p{
+    margin: 10px;
+}

@@ -1,0 +1,19 @@
+.title{
+        font-family: 'Arial', sans-serif;
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-family: 'Arial', sans-serif;
+        font-size: 1rem;
+      }
+      
+      .subtitle, .title{
+        text-align: left;
+        margin: 10px 10px;
+      }
+
+      .sectionContainer{
+        display: flex;
+        flex-wrap: wrap;
+      }
